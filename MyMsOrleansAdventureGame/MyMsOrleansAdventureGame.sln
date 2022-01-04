@@ -3,7 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32002.261
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextAdventure.Grain.Interfaces", "TextAdventure.Grain.Interfaces\TextAdventure.Grain.Interfaces.csproj", "{79AA34A2-E2F6-43FC-913B-F647FE265309}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextAdventure.Entities", "TextAdventure.Entities\TextAdventure.Entities.csproj", "{FC23E573-3415-4906-8505-4B2D09A02232}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{79AA34A2-E2F6-43FC-913B-F647FE265309}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79AA34A2-E2F6-43FC-913B-F647FE265309}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79AA34A2-E2F6-43FC-913B-F647FE265309}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79AA34A2-E2F6-43FC-913B-F647FE265309}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC23E573-3415-4906-8505-4B2D09A02232}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC23E573-3415-4906-8505-4B2D09A02232}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC23E573-3415-4906-8505-4B2D09A02232}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC23E573-3415-4906-8505-4B2D09A02232}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
