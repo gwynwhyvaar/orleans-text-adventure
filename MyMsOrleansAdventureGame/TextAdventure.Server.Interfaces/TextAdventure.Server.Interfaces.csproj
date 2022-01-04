@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TextAdventure.Entities\TextAdventure.Entities.csproj" />
+    <ProjectReference Include="..\TextAdventure.Grain.Interfaces\TextAdventure.Grain.Interfaces.csproj" />
+  </ItemGroup>
+
+</Project>

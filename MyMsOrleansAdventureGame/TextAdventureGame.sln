@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextAdventure.Entities", "T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextAdventure.Grain", "TextAdventure.Grain\TextAdventure.Grain.csproj", "{A7D4C61A-6287-403E-BA3E-D77A93976CCB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextAdventure.Server", "TextAdventure.Server\TextAdventure.Server.csproj", "{0B352B34-F03C-4992-BD27-9AEB6A1702DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextAdventure.Server.Interfaces", "TextAdventure.Server.Interfaces\TextAdventure.Server.Interfaces.csproj", "{93BA661C-DBD6-4154-A3D2-894B6057C833}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{A7D4C61A-6287-403E-BA3E-D77A93976CCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7D4C61A-6287-403E-BA3E-D77A93976CCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7D4C61A-6287-403E-BA3E-D77A93976CCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B352B34-F03C-4992-BD27-9AEB6A1702DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B352B34-F03C-4992-BD27-9AEB6A1702DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B352B34-F03C-4992-BD27-9AEB6A1702DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B352B34-F03C-4992-BD27-9AEB6A1702DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93BA661C-DBD6-4154-A3D2-894B6057C833}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93BA661C-DBD6-4154-A3D2-894B6057C833}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93BA661C-DBD6-4154-A3D2-894B6057C833}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93BA661C-DBD6-4154-A3D2-894B6057C833}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
