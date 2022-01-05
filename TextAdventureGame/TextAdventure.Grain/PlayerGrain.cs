@@ -51,7 +51,7 @@ namespace TextAdventure.Grain
         {
             ThingInfo thingInfo;
             command = command.RemoveStopWords();
-            string[] words = command.Split(' ');
+            string[] words = command.Split(' '); // the first string is the verb
             string verb = words[0].ToLower();
             if (this._killed && verb != "end")
             {
@@ -80,6 +80,7 @@ namespace TextAdventure.Grain
                     var target = command.Substring(verb.Length + 1);
                     return await KillAsync(target);
                 case "drop":
+                    // get a thing based on the item name
                     thingInfo = FindMyThing(words.Rest());
                     return await DropAsync(thingInfo);
                 case "take":
