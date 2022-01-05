@@ -1,7 +1,6 @@
 ﻿using System.IO;
 using System.Reflection;
 using System.Threading.Tasks;
-
 namespace TextAdventure.Server.Console
 {
     class Program
@@ -26,6 +25,7 @@ namespace TextAdventure.Server.Console
                 System.Console.WriteLine($"File not found: {mapFileName}");
                 return -2;
             }
+            return 0;
         }
     }
 }
