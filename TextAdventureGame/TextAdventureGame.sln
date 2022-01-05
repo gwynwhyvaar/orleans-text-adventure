@@ -3,17 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32002.261
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextAdventure.Grain.Interfaces", "TextAdventure.Grain.Interfaces\TextAdventure.Grain.Interfaces.csproj", "{79AA34A2-E2F6-43FC-913B-F647FE265309}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextAdventure.Grain.Interfaces", "TextAdventure.Grain.Interfaces\TextAdventure.Grain.Interfaces.csproj", "{79AA34A2-E2F6-43FC-913B-F647FE265309}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextAdventure.Entities", "TextAdventure.Entities\TextAdventure.Entities.csproj", "{FC23E573-3415-4906-8505-4B2D09A02232}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextAdventure.Entities", "TextAdventure.Entities\TextAdventure.Entities.csproj", "{FC23E573-3415-4906-8505-4B2D09A02232}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextAdventure.Grain", "TextAdventure.Grain\TextAdventure.Grain.csproj", "{A7D4C61A-6287-403E-BA3E-D77A93976CCB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextAdventure.Grain", "TextAdventure.Grain\TextAdventure.Grain.csproj", "{A7D4C61A-6287-403E-BA3E-D77A93976CCB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextAdventure.Server", "TextAdventure.Server\TextAdventure.Server.csproj", "{0B352B34-F03C-4992-BD27-9AEB6A1702DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextAdventure.Server", "TextAdventure.Server\TextAdventure.Server.csproj", "{0B352B34-F03C-4992-BD27-9AEB6A1702DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextAdventure.Server.Interfaces", "TextAdventure.Server.Interfaces\TextAdventure.Server.Interfaces.csproj", "{93BA661C-DBD6-4154-A3D2-894B6057C833}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextAdventure.Server.Interfaces", "TextAdventure.Server.Interfaces\TextAdventure.Server.Interfaces.csproj", "{93BA661C-DBD6-4154-A3D2-894B6057C833}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextAdventure.Server.Console", "TextAdventure.Server.Console\TextAdventure.Server.Console.csproj", "{4E9A50E2-43A9-49A1-9F03-C3FBB1161B25}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextAdventure.Server.Console", "TextAdventure.Server.Console\TextAdventure.Server.Console.csproj", "{4E9A50E2-43A9-49A1-9F03-C3FBB1161B25}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextAdventure.Client.Console", "TextAdventure.Client.Console\TextAdventure.Client.Console.csproj", "{C1500EC5-19EF-41D4-9D5C-6B8C8F8901E1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{4E9A50E2-43A9-49A1-9F03-C3FBB1161B25}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E9A50E2-43A9-49A1-9F03-C3FBB1161B25}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E9A50E2-43A9-49A1-9F03-C3FBB1161B25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1500EC5-19EF-41D4-9D5C-6B8C8F8901E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1500EC5-19EF-41D4-9D5C-6B8C8F8901E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1500EC5-19EF-41D4-9D5C-6B8C8F8901E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1500EC5-19EF-41D4-9D5C-6B8C8F8901E1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -6,7 +6,7 @@ namespace TextAdventure.Grain
     {
         public static string RemoveStopWords(this string s)
         {
-            StringBuilder stringBuilder = new StringBuilder();
+            StringBuilder stringBuilder = new StringBuilder(s);
             string[] stopWards = new string[] { "on", "the", "a" };
             foreach (var word in stopWards)
             {
