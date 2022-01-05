@@ -1,6 +1,12 @@
 ﻿using System.IO;
 using System.Reflection;
 using System.Threading.Tasks;
+
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+
+using Orleans;
+using Orleans.Hosting;
 namespace TextAdventure.Server.Console
 {
     class Program
@@ -20,11 +26,35 @@ namespace TextAdventure.Server.Console
                     mapFileName = args[0];
                     break;
             }
-            if (File.Exists(mapFileName))
+            if (File.Exists(mapFileName) is false)
             {
                 System.Console.WriteLine($"File not found: {mapFileName}");
                 return -2;
             }
+            // configure the host
+            using var host = Host.CreateDefaultBuilder().UseOrleans(siloHostBuilder =>
+            {
+                siloHostBuilder.UseLocalhostClustering();
+            }).Build();
+            // start the host
+            await host.StartAsync();
+
+            System.Console.WriteLine($"Map file name is '{mapFileName}'.");
+            System.Console.WriteLine($"Setting up Text Adventure, please wait ...");
+
+            // intialize the game world
+            var client = host.Services.GetRequiredService<IGrainFactory>();
+            var textAdventureGameServer = new TextAdventureServer(client);
+
+            await textAdventureGameServer.ConfigureAsync(mapFileName);
+
+            System.Console.WriteLine($"Setup completeed.");
+            System.Console.WriteLine($"Now you can launch the client.");
+            // exit when any key is pressed.
+            System.Console.WriteLine($"Press any key to exit.");
+            System.Console.ReadLine();
+
+            await host.StopAsync();
             return 0;
         }
     }

@@ -10,16 +10,13 @@ namespace TextAdventure.Grain
     public class RoomGrain : Orleans.Grain, IRoomGrain
     {
         private string _description;
-        private List<PlayerInfo> _playerInfos;
-        private List<MonsterInfo> _monsterInfos;
-        private List<ThingInfo> _thingInfos;
-        private Dictionary<string, IRoomGrain> _exits;
-        public RoomGrain()
+        private List<PlayerInfo> _playerInfos = new List<PlayerInfo>();
+        private List<MonsterInfo> _monsterInfos = new List<MonsterInfo>();
+        private List<ThingInfo> _thingInfos = new List<ThingInfo>();
+        private Dictionary<string, IRoomGrain> _exits = new Dictionary<string, IRoomGrain>();
+        public override Task OnActivateAsync()
         {
-            this._playerInfos = new List<PlayerInfo>();
-            this._monsterInfos = new List<MonsterInfo>();
-            this._thingInfos = new List<ThingInfo>();
-            this._exits = new Dictionary<string, IRoomGrain>();
+            return base.OnActivateAsync();
         }
         public Task<string> DescriptionAsync(PlayerInfo playerInfo)
         {
@@ -38,7 +35,7 @@ namespace TextAdventure.Grain
                 {
                     others.ForEach(_ => stringBuilder.Append(" ").AppendLine(_.Name));
                 }
-                if(this._monsterInfos.Count > 0)
+                if (this._monsterInfos.Count > 0)
                 {
                     this._monsterInfos.ForEach(_ => stringBuilder.Append(" ").AppendLine(_.Name));
                 }

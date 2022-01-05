@@ -1,6 +1,10 @@
 ﻿using System.Collections.Generic;
+
+using Orleans.Concurrency;
+
 namespace TextAdventure.Entities
 {
+    [Immutable]
     public class MapInfo
     {
         public string Name { get; set; }
