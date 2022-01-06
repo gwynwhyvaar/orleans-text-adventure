@@ -8,11 +8,21 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="6.0.0" />
     <PackageReference Include="Microsoft.Orleans.Client" Version="3.5.1" />
+    <PackageReference Include="Spectre.Console" Version="0.43.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\TextAdventure.Grain.Interfaces\TextAdventure.Grain.Interfaces.csproj" />
     <ProjectReference Include="..\TextAdventure.Grain\TextAdventure.Grain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Fonts\block.flf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Fonts\isometric1.flf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

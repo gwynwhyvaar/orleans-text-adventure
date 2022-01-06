@@ -46,10 +46,9 @@ namespace TextAdventure.Server.Console
             await host.StartAsync();
 
             var fileName = Path.GetFileName(mapFileName);
-
+            AnsiConsole.Write(new Rule("[red]Adventure Game Server[/]"));
             AnsiConsole.Write(new FigletText(font, SERVER_BANNER).LeftAligned().Color(Color.Aqua));
             AnsiConsole.MarkupLine($"Map file name is [bold red]'{fileName}'[/].");
-
             await AnsiConsole.Status().StartAsync("Setting up Text Adventure Server ", async ctx =>
             {
                 ctx.Spinner(Spinner.Known.Dots);
@@ -65,10 +64,8 @@ namespace TextAdventure.Server.Console
                 // exit when any key is pressed.
                 AnsiConsole.MarkupLine($"Press any [bold red]key to exit.[/]");
                 ctx.Status = "completed.";
-            });
-            
+            });     
             System.Console.ReadLine();
-
             await host.StopAsync();
             return 0;
         }
