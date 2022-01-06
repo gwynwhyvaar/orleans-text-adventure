@@ -7,12 +7,19 @@
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.0" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Console" Version="6.0.0" />
+		<PackageReference Include="Spectre.Console" Version="0.43.0" />
 	</ItemGroup>
 	<ItemGroup>
 		<ProjectReference Include="..\TextAdventure.Server.Interfaces\TextAdventure.Server.Interfaces.csproj" />
 		<ProjectReference Include="..\TextAdventure.Server\TextAdventure.Server.csproj" />
 	</ItemGroup>
 	<ItemGroup>
+		<None Update="Fonts\block.flf">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Fonts\isometric1.flf">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
 		<None Update="TextAdventureMap.json">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</None>

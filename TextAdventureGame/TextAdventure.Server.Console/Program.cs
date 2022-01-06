@@ -7,14 +7,20 @@ using Microsoft.Extensions.Hosting;
 
 using Orleans;
 using Orleans.Hosting;
+
+using Spectre.Console;
+
 namespace TextAdventure.Server.Console
 {
     class Program
     {
+        const string SERVER_BANNER = @"Adventure Server";
         static async Task<int> Main(string[] args)
         {
             var path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
             var mapFileName = Path.Combine(path, "TextAdventureMap.json");
+            var fontName = Path.Combine(path, "Fonts\\isometric1.flf");
+            var font = FigletFont.Load(fontName);
             switch (args.Length)
             {
                 default:
@@ -39,19 +45,28 @@ namespace TextAdventure.Server.Console
             // start the host
             await host.StartAsync();
 
-            System.Console.WriteLine($"Map file name is '{mapFileName}'.");
-            System.Console.WriteLine($"Setting up Text Adventure, please wait ...");
+            var fileName = Path.GetFileName(mapFileName);
 
-            // intialize the game world
-            var client = host.Services.GetRequiredService<IGrainFactory>();
-            var textAdventureGameServer = new TextAdventureServer(client);
+            AnsiConsole.Write(new FigletText(font, SERVER_BANNER).LeftAligned().Color(Color.Aqua));
+            AnsiConsole.MarkupLine($"Map file name is [bold red]'{fileName}'[/].");
 
-            await textAdventureGameServer.ConfigureAsync(mapFileName);
+            await AnsiConsole.Status().StartAsync("Setting up Text Adventure Server ", async ctx =>
+            {
+                ctx.Spinner(Spinner.Known.Dots);
+                ctx.Status = "please wait ...";
+                // intialize the game world
+                var client = host.Services.GetRequiredService<IGrainFactory>();
+                var textAdventureGameServer = new TextAdventureServer(client);
 
-            System.Console.WriteLine($"Setup completeed.");
-            System.Console.WriteLine($"Now you can launch the client.");
-            // exit when any key is pressed.
-            System.Console.WriteLine($"Press any key to exit.");
+                await textAdventureGameServer.ConfigureAsync(mapFileName);
+
+                AnsiConsole.MarkupLine($"Setup [bold blue]completed.[/]");
+                AnsiConsole.MarkupLine($"Now you can [bold red]launch[/] the [bold green]client.[/]");
+                // exit when any key is pressed.
+                AnsiConsole.MarkupLine($"Press any [bold red]key to exit.[/]");
+                ctx.Status = "completed.";
+            });
+            
             System.Console.ReadLine();
 
             await host.StopAsync();
