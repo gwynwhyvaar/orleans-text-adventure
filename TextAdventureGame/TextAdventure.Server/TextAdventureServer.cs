@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text.Json;
 using System.Threading.Tasks;
-
-using Newtonsoft.Json;
 
 using Orleans;
 
@@ -24,7 +23,7 @@ namespace TextAdventure.Server
         {
             var rand = new Random();
             var jsonData = await File.ReadAllTextAsync(fileName);
-            var data = JsonConvert.DeserializeObject<MapInfo>(jsonData);
+            var data = JsonSerializer.Deserialize<MapInfo>(jsonData); // JsonConvert.DeserializeObject<MapInfo>(jsonData);
             // init the game world with game data
             var rooms = new List<IRoomGrain>();
             var gameRooms = data.Rooms;
